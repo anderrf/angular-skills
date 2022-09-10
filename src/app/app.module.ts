@@ -12,6 +12,7 @@ import { CardComponent } from './dashboard/card/card.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FakeApiService } from './fake-api.service';
 import { HelloComponent } from './hello.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -22,7 +23,7 @@ import { HelloComponent } from './hello.component';
     BrowserAnimationsModule, 
     MatButtonModule, 
     MatChipsModule, 
-    MatCardModule, 
+    MatCardModule,
     HttpClientModule, 
     InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000})
   ],
@@ -30,7 +31,7 @@ import { HelloComponent } from './hello.component';
     AppComponent, 
     HelloComponent, 
     DashboardComponent, 
-    CardComponent 
+    CardComponent, LoaderComponent 
   ],
   bootstrap: [ 
     AppComponent 

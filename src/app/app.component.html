@@ -1,5 +1,5 @@
 <h3>
   My Skills
 </h3>
-
-<app-dashboard></app-dashboard>
+<app-dashboard (onStartLoading)="isLoading = true"  (onEndLoading)="isLoading = false"></app-dashboard>
+<app-loader *ngIf="isLoading"></app-loader>

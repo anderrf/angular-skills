@@ -16,6 +16,7 @@
     "@angular/router": "^9.1.13",
     "angular-in-memory-web-api": "^0.9.0",
     "core-js": "2",
+    "ngx-spinner": "^9.0.2",
     "rxjs": "^6.5.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -33,9 +34,9 @@
     "@angular/cli": "~9.1.13",
     "@angular/compiler-cli": "~9.1.13",
     "@angular/language-service": "~9.1.13",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",

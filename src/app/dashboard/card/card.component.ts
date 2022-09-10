@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -9,6 +8,7 @@ import { Router } from '@angular/router';
 export class CardComponent implements OnInit {
 
   @Input() card;
+  @Output() onIncreaseLikeCount: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
@@ -17,6 +17,7 @@ export class CardComponent implements OnInit {
   onLike(card: any){
     // TODO: incrementar o like, salvar via rest
     this.card.likes = card.likes + 1;
+    this.onIncreaseLikeCount.emit(this.card);
   }
 
   onShare(card: any){
