@@ -1,3 +1,11 @@
 .example-card {
     max-width: 400px;
   }
+
+.equal-or-greater-than-five-likes{
+  color: #0000CD;
+}
+
+.greater-than-ten-likes{
+  color: #FFD700;
+}

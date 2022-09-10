@@ -24,7 +24,7 @@ import { HelloComponent } from './hello.component';
     MatChipsModule, 
     MatCardModule, 
     HttpClientModule, 
-    InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}) 
+    InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000})
   ],
   declarations: [ 
     AppComponent, 
