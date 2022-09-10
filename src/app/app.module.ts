@@ -16,8 +16,24 @@ import { HelloComponent } from './hello.component';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatChipsModule, MatCardModule, HttpClientModule, InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}) ],
-  declarations: [ AppComponent, HelloComponent, DashboardComponent, CardComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [ 
+    BrowserModule, 
+    FormsModule, 
+    BrowserAnimationsModule, 
+    MatButtonModule, 
+    MatChipsModule, 
+    MatCardModule, 
+    HttpClientModule, 
+    InMemoryWebApiModule.forRoot(FakeApiService, {delay: 5000}) 
+  ],
+  declarations: [ 
+    AppComponent, 
+    HelloComponent, 
+    DashboardComponent, 
+    CardComponent 
+  ],
+  bootstrap: [ 
+    AppComponent 
+  ]
 })
 export class AppModule { }
