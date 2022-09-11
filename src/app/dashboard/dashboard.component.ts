@@ -1,5 +1,6 @@
+import { CardService } from './../services/card.service';
+import { Card } from './../models/Card';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,21 +9,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
 
-  cards: Array<any>;
+  public cards: Array<Card>;
   @Output() public onStartLoading: EventEmitter<void> = new EventEmitter<void>();
   @Output() public onEndLoading: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private cardService: CardService
+    ) { }
 
-  ngOnInit() {
+  public ngOnInit(): void{
     this.onStartLoading.emit();
     this.getSkills();
   }
 
   public getSkills(): void{
-    this.httpClient.get('/api/skills')
+    this.cardService.getCards()
     .subscribe(
-      (ret: Array<any>) => {
+      (ret) => {
         this.cards = [...ret];
       },
       () => {
@@ -36,9 +39,9 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  public updateLikeCount(card: any): void{
+  public updateLikeCount(card: Card): void{
     this.onStartLoading.emit();
-    this.httpClient.put<any>(`/api/skills/${card.id}`, card)
+    this.cardService.updateCardLikeCount(card)
       .subscribe(
         (result) => {
           console.log(result);

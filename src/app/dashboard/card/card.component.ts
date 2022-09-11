@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Card } from 'src/app/models/Card';
 
 @Component({
   selector: 'app-card',
@@ -7,20 +8,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input() card;
-  @Output() onIncreaseLikeCount: EventEmitter<any> = new EventEmitter<any>();
+  @Input() public card: Card;
+  @Output() public onIncreaseLikeCount: EventEmitter<Card> = new EventEmitter<Card>();
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit(): void{
   }
 
-  onLike(card: any){
+  public onLike(card: Card): void{
     // TODO: incrementar o like, salvar via rest
     this.card.likes = card.likes + 1;
     this.onIncreaseLikeCount.emit(this.card);
   }
 
-  onShare(card: any){
+  public onShare(card: Card): void{
     // TODO: abrir o link do seu linkedin
     window.open("https://linkedin.com/in/andersonrochafarias", "_blank");
   }
