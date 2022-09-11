@@ -25,7 +25,11 @@ export class DashboardComponent implements OnInit {
       (ret: Array<any>) => {
         this.cards = [...ret];
       },
-      () => {},
+      () => {
+        if(!this.cards || !this.cards.length){
+          this.cards = [];
+        }
+      },
       () => {
         this.onEndLoading.emit();
       }
@@ -38,7 +42,6 @@ export class DashboardComponent implements OnInit {
       .subscribe(
         (result) => {
           console.log(result);
-          this.getSkills();
         },
         (error) => {
           console.log(error);

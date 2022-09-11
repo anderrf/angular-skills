@@ -2,3 +2,27 @@ p {
   font-family: Lato;
 }
 
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  background-color: #0000CD;
+  padding: 0.5rem;
+}
+
+nav a{
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3{
+  margin-top: 4rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
